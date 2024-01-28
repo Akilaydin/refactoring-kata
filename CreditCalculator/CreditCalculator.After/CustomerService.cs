@@ -1,9 +1,6 @@
 ﻿namespace CreditCalculator.After;
 
-public class CustomerService(
-    CompanyRepository companyRepository,
-    CustomerRepository customerRepository,
-    CreditLimitCalculator creditLimitCalculator)
+public class CustomerService(CompanyRepository companyRepository, CustomerRepository customerRepository, CreditLimitCalculator creditLimitCalculator)
 {
     public bool AddCustomer(
         string firstName,
@@ -28,8 +25,7 @@ public class CustomerService(
             LastName = lastName
         };
 
-        (customer.HasCreditLimit, customer.CreditLimit) =
-            creditLimitCalculator.Calculate(customer, company);
+        (customer.HasCreditLimit, customer.CreditLimit) = creditLimitCalculator.Calculate(customer, company);
 
         if (customer is { HasCreditLimit: true, CreditLimit: < 500 })
         {
