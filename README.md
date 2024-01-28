@@ -1,3 +1,3 @@
-# .NET Refactoring Katas
+# .NET Refactoring Kata
 
-This repository contains refactoring exercises in C#/.NET
+This repository contains my own solution to the refactoring kata
